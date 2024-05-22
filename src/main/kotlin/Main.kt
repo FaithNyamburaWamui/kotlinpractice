@@ -11,23 +11,23 @@ fun main(args: Array<String>) {
      current.withDraw()
 
 
-//    var vehicle=Vehicle("Ford","Juke")
-//    vehicle.isString()
-//
-//    var car=Car("Toyota","Mercides")
-//    car.isString()
-//
-//
-//    var employ=Employee("John",20000)
-//    var employ2= Employee("Faith",60000)
-//    employ.isEmployee()
-//    employ2.isEmployee()
-//
-//    var manage=Manager("Eric",70000)
-//    manage.isEmployee()
-//
-//    var develop=Developer("dorcus",80000)
-//    develop.isEmployee()
+    var vehicle=Vehicle("Ford","Juke")
+    vehicle.isString()
+
+    var car=Car("Toyota","Mercides")
+    car.isString()
+
+
+    var employ=Employee("John",20000)
+    var employ2= Employee("Faith",60000)
+    employ.isEmployee()
+    employ2.isEmployee()
+
+    var manage=Manager("Eric",70000)
+    manage.isEmployee()
+
+    var develop=Developer("dorcus",80000)
+   develop.isEmployee()
 }
 
 open class BankAccount(var accountNumber:String,var balance:Double){
@@ -57,32 +57,32 @@ class CurrentAccount(accountNumber: String,balance: Double):BankAccount(accountN
     }
 }
 
-//open class Vehicle(var brand:String,var make:String){
-//     open fun isString(){
-//        println("The car is ${brand} and is of ${make}")
-//    }
-//}
-//class Car(brand: String,make: String):Vehicle(brand,make){
-//    override fun isString(){
-//        println("The car is ${brand} and is of ${make}")
-//    }
-//}
-//
-//open class Employee(var name:String,var salary:Int){
-//    open fun isEmployee(){
-//        println("My name is ${name} and my salary is ${salary}")
-//    }
-//}
-//class Manager(name: String,salary: Int):Employee(name,salary){
-//    override fun isEmployee(){
-//        var department = "Management"
-//        println("${name} is paid ${salary} from ${department} department")
-//    }
-//}
-//class Developer(name: String,salary: Int):Employee(name,salary){
-//    override fun isEmployee(){
-//        var language ="Kotlin"
-//        println("${salary} is paid to ${name} doing ${language}")
-//    }
-//}
-//
+open class Vehicle(var brand:String,var make:String){
+     open fun isString(){
+        println("The car is ${brand} and is of ${make}")
+    }
+}
+class Car(brand: String,make: String):Vehicle(brand,make){
+    override fun isString(){
+        println("The car is ${brand} and is of ${make}")
+    }
+}
+
+open class Employee(var name:String,var salary:Int){
+    open fun isEmployee(){
+        println("My name is ${name} and my salary is ${salary}")
+    }
+}
+class Manager(name: String,salary: Int):Employee(name,salary){
+    override fun isEmployee(){
+        var department = "Management"
+        println("${name} is paid ${salary} from ${department} department")
+    }
+}
+class Developer(name: String,salary: Int):Employee(name,salary){
+    override fun isEmployee(){
+        var language ="Kotlin"
+        println("${salary} is paid to ${name} doing ${language}")
+    }
+}
+
