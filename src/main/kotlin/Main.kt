@@ -18,8 +18,8 @@ fun main() {
     car.isString()
 
 
-    var employ=Employee("John",20000)
-    var employ2= Employee("Faith",60000)
+    var employ=Employees("John",20000)
+    var employ2= Employees("Faith",60000)
     employ.isEmployee()
     employ2.isEmployee()
 
@@ -59,6 +59,27 @@ fun main() {
 
     var teacher=Teacher("Mary",30)
     teacher.addProperties()
+
+    var animal=Animal("cat","meow")
+    animal.makeSound()
+
+    var dog=Dog("dog","woof")
+    dog.makeSound()
+
+    var calculate=Calculator(listOf(7,6,5,4,3,2,1))
+    calculate.add()
+    calculate.subtract()
+    calculate.multiply()
+    calculate.divide()
+
+    var employe=Employee("Franco","Malawi",3000)
+    employe.isBonus(0.08)
+
+    var shape=Shape(23)
+    shape.calculateArea()
+
+    var circle=Circle(34)
+    circle.calculateArea()
 }
 
 open class BankAccount(var accountNumber:String,var balance:Double){
@@ -99,18 +120,18 @@ class Car(brand: String,make: String):Vehicle(brand,make){
     }
 }
 
-open class Employee(var name:String,var salary:Int){
+open class Employees(var name:String,var salary:Int){
     open fun isEmployee(){
         println("My name is ${name} and my salary is ${salary}")
     }
 }
-class Manager(name: String,salary: Int):Employee(name,salary){
+class Manager(name: String,salary: Int):Employees(name,salary){
     override fun isEmployee(){
         var department = "Management"
         println("${name} is paid ${salary} from ${department} department")
     }
 }
-class Developer(name: String,salary: Int):Employee(name,salary){
+class Developer(name: String,salary: Int):Employees(name,salary){
     override fun isEmployee(){
         var language ="Kotlin"
         println("${salary} is paid to ${name} doing ${language}")
@@ -180,4 +201,65 @@ class Teacher(name: String,age: Int):Person(name,age){
         println("${name} is ${age} years and teaches ${subject}")
     }
 }
+
+open class Animal(var species:String,var sound:String){
+    open fun makeSound(){
+        println("Animal make sound ${sound}")
+    }
+}
+class Dog(species: String,sound: String):Animal(species,sound){
+    override fun makeSound(){
+        println("${species} barks ${sound}")
+    }
+}
+
+class Calculator(var value:List<Int>){
+    fun add(){
+        var sum=0
+        for(i in value)
+            sum+=i
+        println(sum)
+
+    }
+    fun subtract(){
+        var minus=0
+        for(i in value)
+            minus-=i
+        println(minus)
+    }
+
+    fun multiply(){
+        var multiple=1
+        for(i in value)
+            multiple*=i
+        println(multiple)
+    }
+    fun divide(){
+        var divisible=1
+        for(i in value)
+            divisible/=i
+        println(divisible)
+    }
+}
+//Create a class Employee with properties name, designation, and salary, and implement a function to give a bonus based on designation.
+class Employee(var name: String,var designation:String,var salary: Int){
+    fun isBonus(bonus:Double){
+        println("I am going to ${designation} and my bonus id ${bonus}")
+
+    }
+}
+open class Shape(var height:Int){
+    open fun calculateArea(){
+        var area =height*height
+        println(area)
+    }
+}
+class Circle(height: Int):Shape(height){
+    override fun calculateArea(){
+        var area = (22/7*height*height)
+        println(area)
+    }
+
+    }
+
 
